@@ -49,10 +49,10 @@ public class ClienteController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteCliente(@PathVariable Long id) {
+    public ResponseEntity<String> deleteCliente(@PathVariable Long id) {
         boolean deleted = clienteService.deleteCliente(id);
         if (deleted) {
-            return ResponseEntity.noContent().build();
+            return ResponseEntity.ok("O cliente de id " + id + " foi deletado com sucesso.");
         } else {
             return ResponseEntity.notFound().build();
         }
