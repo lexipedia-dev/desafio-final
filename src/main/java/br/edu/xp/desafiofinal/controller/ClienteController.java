@@ -65,7 +65,7 @@ public class ClienteController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<List<Cliente>> findByNome(@RequestParam String nome) {
+    public ResponseEntity<List<Cliente>> getByNome(@RequestParam String nome) {
         List<Cliente> clientes = clienteService.findByNome(nome);
         return ResponseEntity.ok(clientes);
     }
